@@ -1,0 +1,33 @@
+<div class="row">
+<h1>'userlist' collection</h1>
+  
+  
+<% function replacer(key,value) { %>
+  <%  if (key === "_id" && value.length > 5) {return null} 
+  else {return value} } %>
+<table>
+<% userlist.forEach(function(user) { %>
+  <% var dataString = JSON.stringify(user, replacer).split(',') %>
+  <% dataString[0] = '"' + dataString[0].slice(3) %>
+  <tr>
+  <% dataString.forEach(function (keyValPair) { %>
+  
+    <td><div class="cell"><%= keyValPair %></div></td>
+  
+  <% }) %>
+  </tr>
+  <br>
+  
+  <% }) %>
+
+</table>
+</div>
+<br>
+<a href="/newuser">
+  <span class="label label-primary">Create a New User</span>
+</a>
+
+<div style="width:100px; display:inline-block">  </div>
+
+
+<a href="/">Back to Home Page</a>
