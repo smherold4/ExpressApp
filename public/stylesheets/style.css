@@ -1,8 +1,44 @@
 body {
+  background: aliceblue;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+table,th,td {
+  border:4px solid black; 
+  text-align: center;
+}
+
+.cell {
+  
+  padding: 4px;
+}
+
+#inputItemAttr {
+  width:440px;
+  
+}
+
+#inputItemVal {
+  width:440px;
+  
+}
+
+#inputUserName {
+  width:440px;
+  
+}
+
+#inputUserAttr {
+  width:440px;
+  
+}
+
+#inputUserVal {
+  width:440px;
+  
 }
