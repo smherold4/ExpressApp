@@ -3,10 +3,10 @@
   
   
 <% function replacer(key,value) { %>
-  <%  if (key === "_id" && value.length > 5) {return null} 
+  <%  if (key === "_id" && value.length > 5) {return value.slice(0,5) + "..." } 
   else {return value} } %>
 <table>
-<% userlist.forEach(function(user) { %>
+<% user_list.forEach(function(user) { %>
   <% var dataString = JSON.stringify(user, replacer).split(',') %>
   <% dataString[0] = '"' + dataString[0].slice(3) %>
   <tr>
