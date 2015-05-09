@@ -6,14 +6,26 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-      "express": "~4.0.0",
-      "morgan": "~1.0.0",
-      "cookie-parser": "~1.0.1",
-      "body-parser": "~1.0.0",
-      "debug": "~0.7.4",
-      "jade": "~1.3.0",
-      "mongodb": "*",
-      "monk": "*",
-	  "ejs" : "*"
-  }
+    "express": "~4.0.0",
+    "morgan": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0.0",
+    "debug": "~0.7.4",
+    "jade": "~1.3.0",
+    "mongodb": "*",
+    "monk": "*",
+    "ejs": "*"
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/herold4/ExpressApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/herold4/ExpressApp/issues"
+  },
+  "homepage": "https://github.com/herold4/ExpressApp"
 }
