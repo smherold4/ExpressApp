@@ -1,7 +1,10 @@
 body {
   background: aliceblue;
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.padded-content {
+	padding: 5px;
 }
 
 a {
@@ -9,31 +12,17 @@ a {
 }
 
 table,th,td {
-  border:4px solid black; 
-  text-align: center;
+  border:3px solid black; 
 }
 
-.cell {
-  
-  padding: 4px;
+.space2 {
+	margin-bottom: 30px;
 }
 
-#inputItemAttr {
-  width:240px;
-  
+.custom {
+	border: 1px solid yellowgreen;
 }
 
-#inputItemVal {
-  width:240px;
-  
-}
-
-#inputUserAttr {
-  width:240px;
-  
-}
-
-#inputUserVal {
-  width:240px;
-  
+h1,h2,h3,h4,h5 {
+	font-weight: 800;
 }

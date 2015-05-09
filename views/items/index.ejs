@@ -1,25 +1,13 @@
 <div class="row">
-<h1>ItemCollection</h1>
-  
-  
-<% function replacer(key,value) { %>
-  <%  if (key == "_id") {return undefined} else {return value} } %>
+	<h1>ItemCollection</h1>
+	<div class="col-lg-12 col-md-12">
 
-<% itemlist.forEach(function(u) { %>
-  
-  <%= JSON.stringify(u, replacer) %>
-  <br>
-  
-  <% }) %>
+		<div class="space2"></div>
+			<a href="/items/new">
+				<span class="label label-primary">Create a New Item</span>
+			</a>
+		<div class="space2"></div>
 
-
+		<a href="/">Back to Home Page</a>
+	</div>
 </div>
-<br>
-<a href="/items/new">
-  <span class="label label-primary">Create a New Item</span>
-</a>
-
-<div style="width:100px; display:inline-block">  </div>
-
-
-<a href="/">Back to Home Page</a>
