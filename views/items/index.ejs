@@ -1,0 +1,25 @@
+<div class="row">
+<h1>ItemCollection</h1>
+  
+  
+<% function replacer(key,value) { %>
+  <%  if (key == "_id") {return undefined} else {return value} } %>
+
+<% itemlist.forEach(function(u) { %>
+  
+  <%= JSON.stringify(u, replacer) %>
+  <br>
+  
+  <% }) %>
+
+
+</div>
+<br>
+<a href="/items/new">
+  <span class="label label-primary">Create a New Item</span>
+</a>
+
+<div style="width:100px; display:inline-block">  </div>
+
+
+<a href="/">Back to Home Page</a>
