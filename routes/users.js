@@ -18,20 +18,23 @@ router.get('/new', function(req, res) {
 
 router.post('/', function(req, res) {
 	var collection = req.db.get('usercollection');
-	var newUserJSON =  {
+	
+	var newUserJSON = {
 		"uid" : req.body.userid,
 		"username" : req.body.username,
-		"email" : req.body.useremail };
-		if (req.body.attributename) {
-			newUserJSON[req.body.attributename] = req.body.attributeval;
+		"email" : req.body.useremail 
+	}
+	
+	if (req.body.attributename) {
+		newUserJSON[req.body.attributename] = req.body.attributeval;
+	}
+	
+	collection.insert(newUserJSON, function (err, doc) {
+		if (err) {
+			res.send("There was a problem saving this user.");
+		} else {
+			res.redirect("/users");
 		}
-		console.log(newUserJSON);
-		collection.insert(newUserJSON, function (err, doc) {
-			if (err) {
-				res.send("There was a problem saving this user.");
-			} else {
-				res.redirect("/users");
-			}
-		});
 	});
+});
 module.exports = router;

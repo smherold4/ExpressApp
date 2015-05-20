@@ -14,6 +14,17 @@ mongo_app.directive('pad', ['$timeout','dynamicDataFactory', function ($timeout,
 		controller: ['$scope', '$element', function ($scope, $element) {
 			$scope.dataFactory = dynamicDataFactory;
 			$scope.staticMode = true;
+			
+			$scope.update = function() {
+				var data = {query: {}, update: {}};
+				data.query["_id"] = $scope.stats._id;
+				data.update[$scope.key] = $scope.dynamicContent;
+				$scope.dataFactory.user_update(data)
+				.success(function (res) {
+					console.log(res);
+				});
+			}
+			
 			$scope.injectInput = function () {
 				if (this.stats && this.staticMode) {
 					this.staticMode = false;
@@ -21,12 +32,9 @@ mongo_app.directive('pad', ['$timeout','dynamicDataFactory', function ($timeout,
 					$timeout(function () {
 						$input.focus();
 					}, 1);
-					var that = this;
 		      $input.blur(function(){
-						that.$apply(function () {
-							that.staticMode = true;
-						})
-						$scope.dataFactory.update({item: 77});
+						$scope.staticMode = true;
+						$scope.update();
 					});
 				}
 			}
