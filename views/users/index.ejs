@@ -12,11 +12,11 @@
 
 			<tbody>
 				<tr ng-repeat="user in users">
-					<td><pad content="{{user.uid}}"/></td>
-					<td><pad content="{{user.username}}"/></td>
-					<td><pad content="{{user.email}}"/></td>
-					<td><pad content="{{user.miscKey}}"/></td>
-					<td><pad content="{{user.miscVal}}"/></td>
+					<td><pad stats="user" key="uid" dynamic-content="user.uid"/></td>
+					<td><pad stats="user" key="username" dynamic-content="user.username"/></td>
+					<td><pad stats="user" key="email" dynamic-content="user.email"/></td>
+					<td><pad dynamic-content="user.miscKey"/></td>
+					<td><pad dynamic-content="user.miscVal"/></td>
 				</tr>
 	
 			</tbody>

@@ -11,6 +11,7 @@ var db = monk('localhost:27017/cheddar');
 var base_routes = require('./routes/index');
 var user_routes = require('./routes/users');
 var item_routes = require('./routes/items');
+var api_user_routes = require('./routes/api/users');
 var app = express();
 
 // view engine setup
@@ -32,9 +33,11 @@ app.use(function(req,res,next){
     next();
 });
 
+app.use('/api', api_user_routes);
 app.use('/users', user_routes);
 app.use('/items', item_routes);
 app.use('/', base_routes);
+
 
 
 
