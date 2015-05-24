@@ -16,9 +16,8 @@ var app = express();
 
 // view engine setup
 var expressLayouts = require('express-ejs-layouts');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views')); // console.log(__dirname);
 app.set('view engine', 'ejs');
-// console.log(__dirname);
 app.set('layout', 'layout');
 app.use(expressLayouts);
 
@@ -37,9 +36,6 @@ app.use('/api', api_routes);
 app.use('/users', user_routes);
 app.use('/items', item_routes);
 app.use('/', base_routes);
-
-
-
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

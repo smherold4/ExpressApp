@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var filtersHelper = require('./helpers/filters');
 
 router.get('/', function(req, res) {
     var db = req.db;
@@ -13,23 +14,17 @@ router.get('/', function(req, res) {
 });
 
 router.get('/new', function(req, res) {
-    res.render('users/new', { title: 'Add New User' });
+    res.render('users/new', { title: 'Add New User to usercollection' });
 });
 
 router.post('/', function(req, res) {
 	var collection = req.db.get('usercollection');
+	var newUserData = req.body.user;
 	
-	var newUserJSON = {
-		"uid" : req.body.userid,
-		"username" : req.body.username,
-		"email" : req.body.useremail 
-	}
-	
-	if (req.body.attributename) {
-		newUserJSON[req.body.attributename] = req.body.attributeval;
-	}
-	
-	collection.insert(newUserJSON, function (err, doc) {
+	var userObject = filtersHelper.filterByKeys(newUserData, ['uid','username','email']);
+	if (newUserData.attributename) { userObject[newUserData.attributename] = newUserData.attributeval; }
+
+	collection.insert(userObject, function (err, doc) {
 		if (err) {
 			res.send("There was a problem saving this user.");
 		} else {

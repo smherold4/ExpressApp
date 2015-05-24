@@ -1,8 +1,8 @@
 mongo_app.factory('dynamicDataFactory', ['$http', function($http) {
 	var exports = {};
-	exports.user_update = function(data) {
+	exports.update = function(data, route) {
 		return $http({
-			url: '/api/users',
+			url: '/api/' + route,
 			method: 'PUT',
 			data: data,
 			dataType: 'json'

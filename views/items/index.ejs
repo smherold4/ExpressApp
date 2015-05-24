@@ -1,13 +1,28 @@
-<div class="row">
-	<h1>ItemCollection</h1>
+<div class="row" ng-controller="ItemsCtrl" ng-init="init(<%= JSON.stringify(item_list) %>)">
 	<div class="col-lg-12 col-md-12">
+		<table>
+			<thead>
+				<th><pad content="User Id"/></th>
+				<th><pad content="Name"/></th>
+				<th><pad content="Quantity"/></th>
+				<th><pad content="Keywords"/></th>
+			</thead>
+
+			<tbody>
+				<tr ng-repeat="item in items">
+					<td><pad model-type="items" key="uid" model="item"/></td>
+					<td><pad model-type="items" key="name" model="item"/></td>
+					<td><pad model-type="items" key="quantity" model="item"/></td>
+					<td><pad model-type="items" key="keywords" model="item"/></td>
+				</tr>
+			</tbody>
+		</table>
 
 		<div class="space2"></div>
-			<a href="/items/new">
-				<span class="label label-primary">Create a New Item</span>
-			</a>
+		<a href="/items/new">
+			<span class="label label-primary">Create A New Item</span>
+		</a>
 		<div class="space2"></div>
-
 		<a href="/">Back to Home Page</a>
 	</div>
 </div>

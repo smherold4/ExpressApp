@@ -8,5 +8,11 @@ router.put('/users', function(req, res) {
 	res.json({success: true});
 });
 
+router.put('/items', function(req, res) {
+	var collection = req.db.get('itemcollection');
+	collection.update(req.body.query, { $set: req.body.update });
+	res.json({success: true});
+});
+
 
 module.exports = router;

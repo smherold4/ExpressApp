@@ -1,44 +1,37 @@
-
 <div>
-	<h4>Add User to db.usercollection</h4>
-	<form id="formAddUser" name="adduser" method="post" action="/users">
-	
+	<form method="post" action="/users">
 		<div class="row">
 			<div class="col-lg-8 col-md-8">
 				<div class="form-group">
-					<input class="form-control" type="text" name="userid" id="inputUserId" placeholder="User Id">
-				</div>
-
-				<div class="form-group">
-					<input class="form-control" type="text" name="username" id="inputUserName" placeholder="User Name">
+					<input class="form-control" type="text" name="user[uid]" placeholder="User Id">
 				</div>
 				<div class="form-group">
-					<input class="form-control" type="text" name="useremail"  id="inputUserEmail" placeholder="Email">
+					<input class="form-control" type="text" name="user[username]" placeholder="User Name">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" name="user[email]" placeholder="Email">
 				</div>
 			</div>
 		</div>
-	
 		<div class="row">
 			<div class="col-lg-4 col-md-4">
 				<div class="form-group">
-					<input class="form-control custom" type="text" name="attributename"  placeholder="Custom Attribute (optional)">
+					<input class="form-control custom" type="text" name="user[attributename]"  placeholder="Custom Attribute (optional)">
 				</div>
 			</div>
 			<div class='col-lg-4 col-md-4'>
 				<div class="form-group">
-					<input class="form-control custom" type="text" name="attributeval"  placeholder="Custom Value (optional)">
+					<input class="form-control custom" type="text" name="user[attributeval]"  placeholder="Custom Value (optional)">
 				</div>
 			</div>
 		</div>
-	
 		<div class="row">
 			<div class="col-lg-4 col-md-4">
 				<div class="form-group">
-					<button class="btn btn-default" id="btnSubmit">Create User</button>
+					<button class="btn btn-default">Create User</button>
 				</div>
 			</div>
 		</div>
-	
 	</form>
 </div>
 

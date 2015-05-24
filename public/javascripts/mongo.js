@@ -10,3 +10,5 @@ $('.signup.content form input').each(function(){
          .focus(function(){$this.removeAttr('placeholder');})
          .blur(function(){$this.attr('placeholder', $this.data('placeholder'));});
 });
+
+$("#item_quantity").inputmask("9{1,4}");

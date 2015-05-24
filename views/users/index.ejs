@@ -1,22 +1,23 @@
 <div class="row" ng-controller="UsersCtrl" ng-init="init(<%= JSON.stringify(user_list) %>)">
 	<div class="col-lg-12 col-md-12">
-		<h3 class="user-title">User Collection</h3>
 		<table>
 			<thead>
-				<th><pad content="User Id"/></th>
-				<th><pad content="User Name"/></th>
-				<th><pad content="Email"/></th>
-				<th><pad content="Misc. Key"></pad></th>
-				<th><pad content="Misc. Value"></pad></th>
+				<th><pad content="{{ 'User Id' }}"/></th>
+				<th><pad content="{{ 'User Name' }}"/></th>
+				<th><pad content="{{ 'Email' }}"/></th>
+				<th></th>
+				<th><pad content="{{ 'Misc. Key' }}"></pad></th>
+				<th><pad content="{{ 'Misc. Value' }}"></pad></th>
 			</thead>
 
 			<tbody>
 				<tr ng-repeat="user in users">
-					<td><pad stats="user" key="uid" dynamic-content="user.uid"/></td>
-					<td><pad stats="user" key="username" dynamic-content="user.username"/></td>
-					<td><pad stats="user" key="email" dynamic-content="user.email"/></td>
-					<td><pad dynamic-content="user.miscKey"/></td>
-					<td><pad dynamic-content="user.miscVal"/></td>
+					<td><pad model-type="users" key="uid" model="user"/></td>
+					<td><pad model-type="users" key="username" model="user"/></td>
+					<td><pad model-type="users" key="email" model="user"/></td>
+					<td></td>
+					<td><pad content="{{user.miscKey}}"/></td>
+					<td><pad content="{{user.miscVal}}"/></td>
 				</tr>
 	
 			</tbody>

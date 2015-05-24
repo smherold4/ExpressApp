@@ -1,12 +1,38 @@
-<form id="formAddItem" name="additem" method="post" action="/items">
-  
-  <input type="text" name="userid" id="inputUserId" placeholder="User's ID number"><br>
-  <input type="text" name="itemname" id="inputItemName" placeholder="Item Name">
+<div>
+	<form method="post" action="/items">
+		<div class="row">
+			<div class="col-lg-2 col-md-2">
+				<div class="form-group">
+					<input class="form-control" type="text" name="item[uid]" placeholder="User Id">
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-4">
+				<div class="form-group">
+					<input class="form-control" type="text" name="item[name]" placeholder="Name">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-2 col-md-2">
+				<div class="form-group">
+					<input class="form-control" type="text" name="item[quantity]" id="item_quantity" placeholder="Quantity">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6 col-md-6">
+				<div class="form-group">
+					<input class="form-control" type="text" name="item[keywords]" placeholder="Keywords (comma separated)">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4 col-md-4">
+				<div class="form-group">
+					<button class="btn btn-default">Create Item</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
 
-  
-  <br><br>
-  
-  <input type="text" name="attributename" id="inputItemAttr" placeholder="  Invent an Attribute (optional)"><br/>
-  <input type="text" name="attributeval" id="inputItemVal" placeholder="  Value of Attribute (optional)"><br><br>
-  <button id="btnSubmit">Create Item</button>
-</form>
